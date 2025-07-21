@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>快听 - AI音频推荐</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 顶部状态栏 -->
+    <div class="status-bar">
+        <span class="time">23:20</span>
+        <div class="status-icons">
+            <i class="fas fa-signal"></i>
+            <i class="fas fa-wifi"></i>
+            <i class="fas fa-battery-three-quarters"></i>
+        </div>
+    </div>
+
+    <!-- 主容器 -->
+    <div class="app-container">
+        <!-- 顶部导航 -->
+        <div class="top-nav">
+            <div class="nav-tabs">
+                <span class="nav-tab">新人推荐</span>
+                <span class="nav-tab active">热点</span>
+                <span class="nav-tab">科技</span>
+                <span class="nav-tab">商业</span>
+            </div>
+            <div class="user-avatar">
+                <img src="https://via.placeholder.com/40x40/666/fff?text=👤" alt="用户头像">
+            </div>
+        </div>
+
+        <!-- 音频卡片容器 -->
+        <div class="audio-cards-container" id="audioContainer">
+            <!-- 音频卡片会通过JS动态生成 -->
+        </div>
+
+        <!-- 右侧交互按钮 -->
+        <div class="interaction-panel">
+            <div class="interaction-btn like-btn" data-action="like">
+                <i class="far fa-heart"></i>
+                <span class="count">2234</span>
+            </div>
+            <div class="interaction-btn comment-btn" data-action="comment">
+                <i class="far fa-comment"></i>
+                <span class="count">324</span>
+            </div>
+            <div class="interaction-btn share-btn" data-action="share">
+                <i class="fas fa-share"></i>
+            </div>
+            <div class="interaction-btn follow-btn" data-action="follow">
+                <i class="fas fa-plus"></i>
+            </div>
+            <div class="interaction-btn ai-btn" data-action="ai">
+                <i class="fas fa-robot"></i>
+                <span class="ai-badge">AI</span>
+            </div>
+            <div class="interaction-btn dislike-btn" data-action="dislike">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+
+        <!-- 底部播放控制 -->
+        <div class="bottom-controls">
+            <div class="audio-info">
+                <div class="audio-title" id="currentTitle">大案打更人-揭秘京城的神秘税报案</div>
+                <div class="audio-meta">
+                    <div class="creator-info">
+                        <img src="https://via.placeholder.com/24x24/666/fff?text=👤" alt="创作者" class="creator-avatar">
+                        <span class="creator-name">@犯罪心理专家</span>
+                    </div>
+                    <div class="ai-tags">
+                        <span class="ai-tag">AI推荐</span>
+                        <span class="ai-tag">悬疑</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 35%"></div>
+                    <div class="progress-thumb"></div>
+                </div>
+                <div class="time-display">
+                    <span class="current-time">02:15</span>
+                    <span class="total-time">06:42</span>
+                </div>
+            </div>
+
+            <div class="playback-controls">
+                <button class="control-btn backward">
+                    <i class="fas fa-backward"></i>
+                </button>
+                <button class="control-btn play-pause" id="playPauseBtn">
+                    <i class="fas fa-pause"></i>
+                </button>
+                <button class="control-btn forward">
+                    <i class="fas fa-forward"></i>
+                </button>
+                <button class="control-btn playlist">
+                    <i class="fas fa-list"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- 底部导航 -->
+        <div class="bottom-nav">
+            <div class="nav-item">
+                <i class="fas fa-home"></i>
+                <span>首页</span>
+            </div>
+            <div class="nav-item active">
+                <i class="fas fa-headphones"></i>
+                <span>快听</span>
+            </div>
+            <div class="nav-item">
+                <i class="fas fa-crown"></i>
+                <span>会员</span>
+            </div>
+            <div class="nav-item">
+                <i class="fas fa-user"></i>
+                <span>我的</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI助手面板 -->
+    <div class="ai-panel" id="aiPanel">
+        <div class="ai-header">
+            <i class="fas fa-robot"></i>
+            <span>AI音频助手</span>
+            <button class="close-btn" onclick="closeAiPanel()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="ai-content">
+            <div class="ai-summary">
+                <h4>内容摘要</h4>
+                <p>本期节目讲述了明朝京城一起神秘的税务案件，通过心理分析揭示了案件背后的真相...</p>
+            </div>
+            <div class="ai-suggestions">
+                <h4>相关推荐</h4>
+                <div class="suggestion-tags">
+                    <span class="suggestion-tag">历史悬疑</span>
+                    <span class="suggestion-tag">明朝故事</span>
+                    <span class="suggestion-tag">犯罪心理</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
